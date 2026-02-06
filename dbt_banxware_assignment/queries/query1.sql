@@ -1,0 +1,7 @@
+SELECT 
+    product_name
+FROM HOME_ASSIGNMENT.PUBLIC.TRANSFORMED_SALES_DATA
+WHERE order_year = 2023
+GROUP BY product_name
+ORDER BY SUM(total_sales_amount) DESC
+LIMIT 5
