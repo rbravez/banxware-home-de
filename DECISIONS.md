@@ -6,9 +6,11 @@ In order to complete this case study I followed the guide displayed in the *Sett
 
 In order to ingest both datasets into Snowflake I decided to go for the command `dbt seed` because of it's readiness of use and because it looked like the simpler option. In order to do this I had to manually move the datasets into the `seed` folder and rename them manually, which makes me think that if I had a lot of more datasets I would need some bash or python script to actually inegst them all (and rename them properly!). 
 
-Once ingested I made the dbt model to allow the cast transformations, I optimized the query so that instead of performing transformations in the final output, I utilized a CT to handle type casting at the earliest possible stage, this reduces the CPU cycles required by the warehouse. 
+Once ingested I made the dbt model to allow the cast transformations, I optimized the query so that instead of performing transformations in the final output, I utilized a CTE to handle type casting at the earliest possible stage, this reduces the CPU cycles required by the warehouse. 
 
-I intentionally avoided `SELECT *` from the source table, choosing instead gto explicitly define the schema in the `base_sales` CTE. 
+I chose to make this a `table` because the project asked for a new table to be created. In a real job, we might use a `view` instead to save on storage costs since views don't take up any physical space. However, tables are usually faster to query because the computer doesn't have to re-do all the math every time you look at the data. It really comes down to whether you want to save money on storage (use a view) or save time on speed (use a table)."
+
+I intentionally avoided `SELECT *` from the source table, choosing instead to explicitly define the schema in the `base_sales` CTE. 
 
 Finally, to ensure the model is self-documenting, I explicitly defined the final schema instead of using SELECT *. The final script is:
 ```sql
