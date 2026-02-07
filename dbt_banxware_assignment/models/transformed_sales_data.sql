@@ -12,7 +12,12 @@ WITH base_sales AS (
 )
 
 SELECT
-    *,
+    order_id,
+    customer_id,
+    product_name,
+    quantity,
+    price,
+    order_date_clean,
     YEAR(order_date_clean) AS order_year,
     MONTH(order_date_clean) AS order_month,
     DAY(order_date_clean) AS order_day,
