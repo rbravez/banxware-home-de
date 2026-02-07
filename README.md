@@ -1,5 +1,5 @@
-# Case Study - Junior Data Engineer Banxware
-This project manages the end-to-end transformation of retail sales data using Snowflake and dbt. It ingests raw customer and sales data and transforms it into a "Silver" layer dataset where data is cleaned, types are cast, and key metrics are pre-calculated for downstream analysis performance. [Case study can be found here](https://bitbucket.org/panther-ci/data-engineering-home-assignment/src/main/). 
+# Case Study - Junior Data Engineer Banxwar
+This project manages the end-to-end transformation of retail sales data using Snowflake and dbt. It ingests raw customer and sales data and transforms it into a "Silver" layer dataset where data is cleaned, types are cast, and key metrics are pre-calculated for downstream analysis performance. [Case study can be found here](https://bitbucket.org/panther-ci/data-engineering-home-assignment/src/main/). While the documentation for the decisions made [can be found here at the DECISIONS.md file](https://github.com/rbravez/banxware-home-de/edit/main/DECISIONS.md)
 
 ## Project Structure  
 ```
@@ -19,7 +19,7 @@ root/
 └── .gitignore                   
 ```
 
-## Getting Started
+## How to run it
 **1. Prerequisites**
    - Python 3.10+
    - Snowflake account with a database named HOME_ASSIGMENT
