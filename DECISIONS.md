@@ -1,4 +1,4 @@
-# Case Study - Junior Data Engineer Banxware
+# Case Study Decisions Document - Junior Data Engineer Banxware
 This project manages the end-to-end transformation of retail sales data using Snowflake and dbt. It ingests raw customer and sales data and transforms it into a "Silver" layer dataset where data is cleaned, types are cast, and key metrics are pre-calculated for downstream analysis performance. [Case study can be found here](https://bitbucket.org/panther-ci/data-engineering-home-assignment/src/main/). 
 
 ## Implementation
