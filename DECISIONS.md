@@ -126,12 +126,16 @@ The SQL queries to answer the specific business questions (Top products, top cus
 
 4. Which customers had the highest order volume in the month of October 2023?
    ```sql
-   SELECT 
-    customer_id, 
-    COUNT(order_id) AS order_count
-    FROM HOME_ASSIGNMENT.PUBLIC.TRANSFORMED_SALES_DATA
-    WHERE order_year = 2023 
-      AND order_month = 10
-    GROUP BY customer_id
-    ORDER BY order_count DESC
-    LIMIT 1
+    SELECT 
+     customer_id, 
+     SUM(total_sales_amount) AS order_volume
+     FROM HOME_ASSIGNMENT.PUBLIC.TRANSFORMED_SALES_DATA
+     WHERE order_year = 2023 
+       AND order_month = 10
+     GROUP BY customer_id
+     ORDER BY order_volume DESC
+     LIMIT 1
+   ```
+   <img width="685" height="173" alt="{661BF091-49AA-4D8D-9F8D-3AFAF1E233F1}" src="https://github.com/user-attachments/assets/a39f89b2-31f3-4e57-9d41-a4450d01abe9" />
+   
+   Some comments: I understood order volume as the total amount spent from the customer in the orders and not as the total count of orders made by them. In a real world scenario I would like to clarify this with any stakeholder that may request this information.
