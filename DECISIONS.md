@@ -2,9 +2,9 @@
 This project manages the end-to-end transformation of retail sales data using Snowflake and dbt. It ingests raw customer and sales data and transforms it into a "Silver" layer dataset where data is cleaned, types are cast, and key metrics are pre-calculated for downstream analysis performance. [Case study can be found here](https://bitbucket.org/panther-ci/data-engineering-home-assignment/src/main/). 
 
 ## Implementation
-In order to complete this case study I followed the guide displayed in the *Setting Up Your Enviroment* section, which allowed me to set up my Snowflake account and the dbt configuration. I made sure everything was working properly using the command `dbt debug`. Once the connections was assured I move on to the next steps.  
+In order to complete this case study I followed the guide displayed in the *Setting Up Your Enviroment* section, which allowed me to set up my Snowflake account and the dbt configuration. I made sure everything was working properly using the command `dbt debug`. Once the connection was assured I move on to the next steps.  
 
-In order to ingest both datasets into Snowflake I decided to go for the command `dbt seed` because of it's readiness of use and because it looked like the simpler option. In order to do this I had to manually move the datasets into the `seed` folder and rename them manually, which makes me think that if I had a lot of more datasets I would need some bash or python script to actually inegst them all (and rename them properly!). 
+To ingest both datasets into Snowflake I decided to go for the command `dbt seed` because of it's readiness of use and because it looked like the simpler option. To do this I had to manually move the datasets into the `seed` folder and rename them manually, which makes me think that if I had more datasets I would need some bash or python script to actually inegst them all (and rename them properly!). 
 
 Once ingested I made the dbt model to allow the cast transformations, I optimized the query so that instead of performing transformations in the final output, I utilized a CTE to handle type casting at the earliest possible stage, this reduces the CPU cycles required by the warehouse. 
 
